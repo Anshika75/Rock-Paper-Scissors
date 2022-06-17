@@ -1,0 +1,173 @@
+@import "mixin";
+
+:root {
+    --primary: #010a26;
+    --secondary: #E33F2B;
+    --tertiary: #F7F7F7;
+    --grey: #bdbcbc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.icon {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background-color: var(--primary);
+    color: var(--secondary);
+    opacity: 0.8;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    z-index: 20;
+    @include trans();
+
+    i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &:hover {
+        opacity: 1;
+    }
+}
+main {
+    @include gridprops();
+    min-height: 100vh;
+    background-color: var(--secondary);
+    background-color: #E33F2B;
+
+    .contentBox {
+        background-color: var(--tertiary);
+        height: 300px;
+        min-width: 300px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+        @include flexprops(row, space-between, center);
+        padding: 20px;
+        flex-wrap: wrap;
+
+        .sub1 {
+            @include flexprops(column, space-around, center);
+            padding: 0 10px 0 0;
+            border-right: 1.5px solid #bdbcbc70;
+
+            .playersBox {
+                @include flexprops(row, center, center);
+                width: 100%;
+                font-size: 2.5rem;
+                color: var(--primary);
+                margin-top: 20px;
+
+                .opponent {
+                    margin: 12px;
+
+                    .fa-hand-rock {
+                        transform: rotate(90deg);
+                    }
+
+                    .fa-hand-paper {
+                        transform: rotate(90deg);
+                    }
+
+                    .fa-hand-scissors {
+                        transform: rotate(0deg) scaleX(-1);
+                    }
+                }
+
+                .player {
+                    margin: 12px;
+
+                    .fa-hand-rock {
+                        transform: rotate(-90deg) scaleX(-1);
+                    }
+
+                    .result .fa-hand-scissors {
+                        transform: rotate(180deg);
+                    }
+
+                    .fa-hand-paper {
+                        transform: rotate(90deg) scaleY(-1);
+                    }
+                }
+            }
+
+            .resultsBox {
+                @include flexprops(row, center, center);
+                width: 100%;
+
+                div {
+                    margin: 0 12px;
+                    font-size: 1.2rem;
+                    color: var(--primary);
+                    @include flexprops(column, center, center);
+                }
+            }
+        }
+
+        .sub2 {
+            @include flexprops(column, space-around, center);
+            border-left: 1.5px solid #bdbcbc70;
+            margin: 0 0 0 2px;
+            padding: 0 0 0 10px;
+
+            p {
+                margin: 12px;
+                font-size: 1.2rem;
+                color: var(--primary);
+            }
+
+            .choiceBox {
+                width: 100%;
+                @include flexprops(row, space-around, center);
+                margin-top: 10px;
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+
+                .btn {
+                    color: var(--grey);
+                    background-color: var(--primary);
+                    height: 35px;
+                    width: 35px;
+                    border-radius: 50%;
+                    margin: 0 12px;
+                    @include gridprops();
+                    @include trans();
+                    opacity: 0.7;
+
+                    &:hover {
+                        background-color: var(--secondary);
+                        color: var(--primary);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        .contentBox {
+            @include flexprops(column, space-around, center);
+            padding: 0px;
+
+            .sub1 {
+                padding: 0 0px 0 0;
+                border-right: none;
+            }
+
+            .sub2 {
+                border-left: none;
+                margin: 0 0 0 0px;
+                padding: 0 0 0 0px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./sass/main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="icon" onclick="themechange()">
+        <i id="icon" class="fas fa-sun"></i>
+    </div>
+    <main>
+        <div class="contentBox">
+            <div class="sub1">
+                <div class="resultsBox">
+                    <div>
+                        <p>WINS</p>
+                        <p class="times-won">0</p>
+                    </div>
+                    <div>
+                        <p>LOSS</p>
+                        <p class="times-lost">0</p>
+                    </div>
+                    <div>
+                        <p>DRAWS</p>
+                        <p class="times-draw">0</p>
+                    </div>
+                </div>
+                <div class="playersBox">
+                    <div class="opponent">
+                        <i id="opponent-result" data-element="" class="far fa-hand-rock"></i>
+                    </div>
+
+                    <div class="player">
+                        <i id="player-result" data-element="" class="result far fa-hand-rock"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="sub2">
+                <p id="match-results">Pick one to start!</p>
+                <div class="choiceBox">
+                    <div data-element="hand-rock" class="btn pick-rock far fa-hand-rock"></div>
+                    <div data-element="hand-paper" class="btn pick-paper far fa-hand-paper"></div>
+                    <div data-element="hand-scissors" class="btn pick-scissors far fa-hand-scissors"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+
+</html>
