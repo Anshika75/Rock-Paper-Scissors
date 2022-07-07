@@ -1,5 +1,5 @@
 const icon = document.getElementById("icon");
-var count = 0;
+var count = 0, player = "rock";
 function themechange() {
   count++;
   if (count % 2 == 0) {
@@ -18,3 +18,24 @@ function themechange() {
     document.documentElement.style.setProperty("--secondary", "#010a26");
   }
 }
+document.getElementById("hand-rock").onclick = () => {
+  document.getElementById("player-result").classList.remove("fa-hand-rock");
+  document.getElementById("player-result").classList.remove("fa-hand-paper");
+  document.getElementById("player-result").classList.remove("fa-hand-scissors");
+  document.getElementById("player-result").classList.add("fa-hand-rock");
+  player = "rock";
+};
+document.getElementById("hand-paper").onclick = () => {
+  document.getElementById("player-result").classList.remove("fa-hand-rock");
+  document.getElementById("player-result").classList.remove("fa-hand-paper");
+  document.getElementById("player-result").classList.remove("fa-hand-scissors");
+  document.getElementById("player-result").classList.add("fa-hand-paper");
+  player = "paper";
+};
+document.getElementById("hand-scissors").onclick = () => {
+  document.getElementById("player-result").classList.remove("fa-hand-rock");
+  document.getElementById("player-result").classList.remove("fa-hand-paper");
+  document.getElementById("player-result").classList.remove("fa-hand-scissors");
+  document.getElementById("player-result").classList.add("fa-hand-scissors");
+  player = "scissors";
+};
