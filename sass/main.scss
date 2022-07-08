@@ -12,6 +12,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .icon {
     position: fixed;
     top: 30px;
@@ -32,10 +33,12 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
     &:hover {
         opacity: 1;
     }
 }
+
 main {
     @include gridprops();
     min-height: 100vh;
@@ -148,6 +151,23 @@ main {
                 }
             }
         }
+    }
+}
+
+.fists-animation {
+    animation-name: shake-fists;
+    animation-duration: 0.2s;
+    animation-iteration-count: 6;
+    animation-direction: alternate;
+}
+
+@keyframes shake-fists {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-30px);
     }
 }
 

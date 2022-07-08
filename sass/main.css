@@ -157,6 +157,34 @@ main .contentBox .sub2 .choiceBox .btn:hover {
   opacity: 1;
 }
 
+.fists-animation {
+  -webkit-animation-name: shake-fists;
+          animation-name: shake-fists;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-iteration-count: 6;
+          animation-iteration-count: 6;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+@-webkit-keyframes shake-fists {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes shake-fists {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-30px);
+  }
+}
 @media (max-width: 600px) {
   main .contentBox {
     display: flex;
