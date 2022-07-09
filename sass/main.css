@@ -162,7 +162,6 @@ main .contentBox .sub2 .choiceBox .btn:hover {
   opacity: 1;
 }
 main .resultBox {
-  visibility: hidden;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -179,12 +178,15 @@ main .resultBox {
   padding: 20px;
   flex-wrap: wrap;
   z-index: 20;
+  display: none;
 }
 main .resultBox p {
   margin-bottom: 12px;
   font-size: 2rem;
   font-weight: 700;
   color: var(--primary);
+  width: 70%;
+  text-align: center;
 }
 main .resultBox .btn {
   color: var(--grey);

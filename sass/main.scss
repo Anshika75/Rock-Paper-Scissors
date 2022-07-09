@@ -172,12 +172,15 @@ main {
         padding: 20px;
         flex-wrap: wrap;
         z-index: 20;
+        display: none;
 
         p {
             margin-bottom: 12px;
             font-size: 2rem;
             font-weight: 700;
             color: var(--primary);
+            width: 70%;
+            text-align: center;
         }
         .btn {
             color: var(--grey);

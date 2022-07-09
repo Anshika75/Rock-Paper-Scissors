@@ -23,6 +23,7 @@ const opponent = document.getElementById("opponent-result");
 const player = document.getElementById("player-result");
 let opponentData = opponent.dataset["{element}"];
 let playerData = player.dataset["{element}"];
+let resulBox = document.getElementById("resultBox");
 let resultOfGame = document.getElementById("whoWon");
 
 const dataArr = ["hand-scissors", "hand-paper", "hand-rock"];
@@ -65,7 +66,6 @@ animationReciever.addEventListener("animationend", () => {
   // The winner after 5 points
   finalWinner();
   // reseting after someone wins
-  reset();
 });
 
 function opponentRandom() {
@@ -106,24 +106,27 @@ function matchLost() {
   matchResults.innerText = "You lost";
 }
 
-function finalWinner(){
+function finalWinner() {
   if (timesWon === 5) {
-    resultOfGame.innerText = 'Player is the Winner! Congratulations!'
-  } 
-  else if(timesLost === 5) {
+    resulBox.style.display = "flex";
+    resultOfGame.innerText = 'You won! Congratulations!'
+  }
+  else if (timesLost === 5) {
+    resulBox.style.display = "flex";
     resultOfGame.innerText = 'Computer is the Winner! You Lose!'
   }
 }
 
 function reset() {
-  if (timesWon === 5 || timesLost === 5) {
-    setTimeout(function(){
+    setTimeout(function () {
       timesWon = 0;
       timesLost = 0;
+      timesDraw = 0;
       // compSelect.innerHTML = '';
       // playerSelect.innerHTML = '';
-      pScore.innerText = timesWon;
-      cScore.innerText = timesLost;
-    }, 3000);    
-  }
+      wonCount.innerText = timesWon;
+      lostCount.innerText = timesLost;
+      drawCount.innerText = timesDraw;
+      resulBox.style.display = "none";
+    }, 500);
 }
