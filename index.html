@@ -16,8 +16,9 @@
     <div class="icon" onclick="themechange()">
         <i id="icon" class="fas fa-sun"></i>
     </div>
+    <i class="ibtn fas fa-question" onclick="openBox()"></i>
     <main>
-        <div class="contentBox">
+        <div class="contentBox" id="contentBox">
             <div class="sub1">
                 <div class="resultsBox">
                     <div>
@@ -55,6 +56,19 @@
         <div class="resultBox" id="resultBox">
             <p id="whoWon">You Won !</p>
             <div class="btn" id="restart" onclick="reset()">Replay</div>
+        </div>
+        <div class="instructionBox" id="instructionBox">
+            <div class="page">
+                <i class="cross fas fa-times" onclick="closeBox()"></i>
+                <div class="txt">
+                    <p>• Choose between Rock, Paper or Scissors by clicking on the icon</p>
+                    <p>• <i class="far fa-hand-rock"></i> beats <i class="far fa-hand-scissors"></i></p>
+                    <p>• <i class="far fa-hand-scissors"></i> beats <i class="far fa-hand-paper"></i></p>
+                    <p>• <i class="far fa-hand-paper"></i> beats <i class="far fa-hand-rock"></i></p>
+                    <p>• First player to win 5 rounds is the winner</p>
+                    <p>• Play again</p>
+                </div>
+            </div>
         </div>
     </main>
     <script src="./script.js"></script>

@@ -41,6 +41,29 @@
     }
 }
 
+.ibtn {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    background-color: var(--primary);
+    color: var(--secondary);
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    @include gridprops();
+    @include trans();
+    opacity: 0.7;
+    margin-top: 15px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
 main {
     @include gridprops();
     min-height: 100vh;
@@ -182,6 +205,7 @@ main {
             width: 70%;
             text-align: center;
         }
+
         .btn {
             color: var(--grey);
             background-color: var(--primary);
@@ -198,6 +222,51 @@ main {
                 background-color: var(--secondary);
                 color: var(--primary);
                 opacity: 1;
+            }
+        }
+    }
+
+    .instructionBox {
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        transform: translate(-10%, 5%);
+        background-color: var(--tertiary);
+        height: auto;
+        padding: 30px 20px;
+        width: 300px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+        @include flexprops(column, center, center);
+        flex-wrap: wrap;
+        z-index: 40;
+        display: none;
+
+       .txt{
+        @include flexprops(column, center, center);
+        p {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            width: 100%;
+            text-align: left;
+            margin: 7px 0;
+        }
+       }
+
+        .cross {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            color: var(--primary);
+            opacity: 0.7;
+            transform: scale(1);
+            transition: all 0.3s ease-in-out;
+        
+            &:hover {
+                opacity: 1;
+                transform: scale(0.8);
             }
         }
     }

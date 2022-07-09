@@ -18,12 +18,19 @@ function themechange() {
     document.documentElement.style.setProperty("--secondary", "#010a26");
   }
 }
+function closeBox(){
+  document.getElementById("instructionBox").style.display="none";
+}
+function openBox(){
+  document.getElementById("instructionBox").style.display="flex";
+}
 let buttons = document.querySelectorAll(".choiceBox .btn");
 const opponent = document.getElementById("opponent-result");
 const player = document.getElementById("player-result");
 let opponentData = opponent.dataset["{element}"];
 let playerData = player.dataset["{element}"];
-let resulBox = document.getElementById("resultBox");
+let contentBox = document.getElementById("contentBox");
+let resultBox = document.getElementById("resultBox");
 let resultOfGame = document.getElementById("whoWon");
 
 const dataArr = ["hand-scissors", "hand-paper", "hand-rock"];
@@ -108,11 +115,13 @@ function matchLost() {
 
 function finalWinner() {
   if (timesWon === 5) {
-    resulBox.style.display = "flex";
+    resultBox.style.display = "flex";
+    contentBox.style.display = "none";
     resultOfGame.innerText = 'You won! Congratulations!'
   }
   else if (timesLost === 5) {
-    resulBox.style.display = "flex";
+    resultBox.style.display = "flex";
+    contentBox.style.display = "none";
     resultOfGame.innerText = 'Computer is the Winner! You Lose!'
   }
 }
@@ -129,6 +138,7 @@ function reset() {
       wonCount.innerText = timesWon;
       lostCount.innerText = timesLost;
       drawCount.innerText = timesDraw;
-      resulBox.style.display = "none";
+      resultBox.style.display = "none";
+      contentBox.style.display = "flex";
     }, 500);
 }
