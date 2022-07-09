@@ -23,6 +23,7 @@ const opponent = document.getElementById("opponent-result");
 const player = document.getElementById("player-result");
 let opponentData = opponent.dataset["{element}"];
 let playerData = player.dataset["{element}"];
+let resultOfGame = document.getElementById("whoWon");
 
 const dataArr = ["hand-scissors", "hand-paper", "hand-rock"];
 
@@ -60,8 +61,11 @@ animationReciever.addEventListener("animationend", () => {
 
   // Opponent recieves random data from array
   opponentRandom();
-
   whoWon();
+  // The winner after 5 points
+  finalWinner();
+  // reseting after someone wins
+  reset();
 });
 
 function opponentRandom() {
@@ -100,4 +104,26 @@ function matchLost() {
   timesLost++;
   lostCount.innerText = timesLost;
   matchResults.innerText = "You lost";
+}
+
+function finalWinner(){
+  if (timesWon === 5) {
+    resultOfGame.innerText = 'Player is the Winner! Congratulations!'
+  } 
+  else if(timesLost === 5) {
+    resultOfGame.innerText = 'Computer is the Winner! You Lose!'
+  }
+}
+
+function reset() {
+  if (timesWon === 5 || timesLost === 5) {
+    setTimeout(function(){
+      timesWon = 0;
+      timesLost = 0;
+      // compSelect.innerHTML = '';
+      // playerSelect.innerHTML = '';
+      pScore.innerText = timesWon;
+      cScore.innerText = timesLost;
+    }, 3000);    
+  }
 }
