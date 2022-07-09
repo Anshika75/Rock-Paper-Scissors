@@ -162,6 +162,7 @@ main .contentBox .sub2 .choiceBox .btn:hover {
   opacity: 1;
 }
 main .resultBox {
+  visibility: hidden;
   position: absolute;
   top: 50%;
   left: 50%;
