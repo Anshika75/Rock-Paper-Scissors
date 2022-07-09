@@ -18,7 +18,7 @@ function themechange() {
     document.documentElement.style.setProperty("--secondary", "#010a26");
   }
 }
-let buttons = document.querySelectorAll(".choiceBox button");
+let buttons = document.querySelectorAll(".choiceBox .btn");
 const opponent = document.getElementById("opponent-result");
 const player = document.getElementById("player-result");
 let opponentData = opponent.dataset["{element}"];
@@ -76,11 +76,11 @@ function whoWon() {
     (opponentData == "hand-paper" && playerData == "hand-rock") ||
     (opponentData == "hand-rock" && playerData == "hand-scissors")
   ) {
-    matchWon();
+    matchLost();
   } else if (opponentData == playerData) {
     matchDraw();
   } else {
-    matchLost();
+    matchWon();
   }
 }
 
