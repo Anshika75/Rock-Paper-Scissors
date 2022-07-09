@@ -122,8 +122,10 @@ function reset() {
       timesWon = 0;
       timesLost = 0;
       timesDraw = 0;
-      // compSelect.innerHTML = '';
-      // playerSelect.innerHTML = '';
+      player.className = "result far fa-hand-rock";
+      playerData = "";
+      opponent.className = "far fa-hand-rock";
+      opponentData = "";
       wonCount.innerText = timesWon;
       lostCount.innerText = timesLost;
       drawCount.innerText = timesDraw;
