@@ -43,9 +43,9 @@ let buttonData;
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     animationReciever.classList.add("fists-animation");
-    player.className = "result far fa-hand-paper";
+    player.className = "result far fa-hand-rock";
     playerData = "";
-    opponent.className = "far fa-hand-paper";
+    opponent.className = "far fa-hand-rock";
     opponentData = "";
     buttonData = button.dataset.element;
   });

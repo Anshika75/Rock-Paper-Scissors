@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
 :root {
   --primary: #010a26;
   --secondary: #E33F2B;
@@ -9,6 +10,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
 }
 
 .icon {
@@ -42,6 +44,7 @@ main {
   min-height: 100vh;
   background-color: var(--secondary);
   background-color: #E33F2B;
+  position: relative;
 }
 main .contentBox {
   background-color: var(--tertiary);
@@ -108,6 +111,7 @@ main .contentBox .sub1 .resultsBox {
 main .contentBox .sub1 .resultsBox div {
   margin: 0 12px;
   font-size: 1.2rem;
+  font-weight: 600;
   color: var(--primary);
   display: flex;
   justify-content: center;
@@ -127,6 +131,7 @@ main .contentBox .sub2 p {
   margin: 12px;
   font-size: 1.2rem;
   color: var(--primary);
+  font-weight: 900;
 }
 main .contentBox .sub2 .choiceBox {
   width: 100%;
@@ -152,6 +157,49 @@ main .contentBox .sub2 .choiceBox .btn {
   opacity: 0.7;
 }
 main .contentBox .sub2 .choiceBox .btn:hover {
+  background-color: var(--secondary);
+  color: var(--primary);
+  opacity: 1;
+}
+main .resultBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--tertiary);
+  height: 300px;
+  min-width: 300px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  flex-wrap: wrap;
+  z-index: 20;
+}
+main .resultBox p {
+  margin-bottom: 12px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+main .resultBox .btn {
+  color: var(--grey);
+  background-color: var(--primary);
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  display: grid;
+  place-items: center;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  opacity: 0.7;
+  margin-top: 15px;
+}
+main .resultBox .btn:hover {
   background-color: var(--secondary);
   color: var(--primary);
   opacity: 1;
