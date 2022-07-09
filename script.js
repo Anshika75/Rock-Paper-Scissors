@@ -1,4 +1,5 @@
 const icon = document.getElementById("icon");
+var count = 0;
 function themechange() {
   count++;
   if (count % 2 == 0) {
